@@ -1,0 +1,7 @@
+
+Ask user for size of pyramide between 1-8 with the get_int function
+   check if the number is valid
+   reprompt user if number is below 1 or higher than 8 with a do while loop
+
+   Create a loop which prints the spaces in each line
+   Create a second loop inside the first loop which prints the "#" in each line

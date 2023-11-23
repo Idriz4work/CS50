@@ -1,0 +1,10 @@
+sort1 uses: Bubble sort
+How do you know?: When testing all 3 sorts on sorted50000.txt sort1 is the fastest
+
+
+sort2 uses: Merge sort
+How do you know?: when testing all 3 sorts on random5000.txt sort2 is the fastest
+
+
+sort3 uses: Selection sort
+How do you know?: when testing all 3 sorts on reversed5000.txt sort3 is the fastest
