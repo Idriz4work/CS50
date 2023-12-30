@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+{% block main %}
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <body class="text-center">
+                <form class="form-signin" action="/login" method = "post">
+                  <img class="mb-4" href="https://th.bing.com/th/id/R.bfe7f7957e9940e69a25d318cdfcf5f7?rik=fIZ99mApibR2tQ&pid=ImgRaw&r=0" alt="" width="80" height="80">
+                  <h1 class="h3 mb-3 font-weight-normal">Register for an new account</h1>
+                  <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="confirmation" placeholder="confirmation" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+{% endblock %}
+

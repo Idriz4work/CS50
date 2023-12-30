@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/5.1/ -->
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" rel="stylesheet">
+        <script crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"></script>
+        <link href="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel='stylesheet'>
+
+        <!-- https://favicon.io/emoji-favicons/money-bag/ -->
+        <link href="/static/favicon.ico" rel="icon">
+        <link href="/images/cashflo(1).png">
+        <link href="/static/stylesheet.css" rel="stylesheet">
+
+
+        <title> Hustlers Place: {% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body>
+            <div class="container-fluid">
+                <header class="Header" id="header" data-scene="top">
+                    <div class="Header__inner">
+                      <h1 class="Header__title">
+                      </h1>
+                      <nav class="Header__nav">
+                        <ul class="list">
+                          <li></li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </header>
+                  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                    <a href="/"><span id="hu" class="white">Hustlers Place</span></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                      <ul class="navbar-nav mr-auto">
+                        <div class="collapse navbar-collapse" id="navbar">
+                            {% if session["user_id"] %}
+                            <ul class="navbar-nav me-auto mt-2">
+                                <li class="nav-item"><a id="grid-item" class="nav-link" href="/planner">Tasks planner</a></li>
+                                <li class="nav-item"><a id="grid-item" class="nav-link" href="/finish">Finish tasks</a></li>
+                                <li class="nav-item"><a name="grid-item" id="grid-item" class="nav-link" href="/delete">Delete Every Tasks</a></li>
+                                <li class="nav-item"><a name="grid-item" id="grid-item" class="nav-link" href="/delete_finish">Delete Every Finished Tasks</a></li>
+                                <li class="nav-item"><a name="grid-item" id="grid-item" class="nav-link" href="/delete_memory">Delete Memory</a></li>
+                                <li class="nav-item"><a name="grid-item" id="grid-item" class="nav-link" href="/changepassword">Password Change</a></li>
+                            </ul>
+                            <form class="form-inline mt-2 mt-md-0">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                                    <a class="nav-link" href="/logout">Log Out</a>
+                                </button>
+                            </form>
+                            {% else %}
+                                <ul class="navbar-nav ms-auto mt-2">
+                                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                                </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                  </nav>
+            </div>
+        </nav>
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary mb-0 text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <main class="container-fluid py-5 text-center">
+            {% block main %}{% endblock %}
+        </main>
+    </body>
+    <lowerbody>
+        <p>Hustlers Place</p>
+    </lowerbody>
+
+</html>

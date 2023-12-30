@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    delete
+{% endblock %}
+{% block main %}
+
+<form action="/delete_memory" method="post">
+    <div class="form-group">
+      <select required name="task" class="form-select form-control" aria-label="Default select">
+          <option value="">Delete memory</option>
+          {% for task in memory %}
+              <option>{{ task["task"] }}</option>
+          {% endfor %}
+      </select>
+    </div>
+    <button style='width: 200px' class="form-group btn btn-info" type="submit">delete</button>
+<style>
+  body {
+      background-color: #003153;
+      background-size: cover; /* This ensures that the background image covers the entire viewport */
+      height: 100vh; /* Set the height of the body to the full viewport height */
+      margin: 0; /* Remove default margin */
+  }
+  </style>
+</form>
+{% endblock %}

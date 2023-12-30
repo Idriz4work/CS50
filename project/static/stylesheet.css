@@ -1,0 +1,69 @@
+#g{
+    background-color:green;
+    color:white;
+    text-align: center;
+}
+.te{
+    text-align:center;
+}
+#header{
+    color: white;
+
+}
+
+body {
+    text-align: center;
+  }
+
+  #taskDescription {
+    width: 250px; /* Set the width in pixels or another unit */
+    height: 200px; /* Set the height in pixels or another unit */
+    line-height: 20px; /* Set line height to the same as the height for vertical centering */
+  }
+
+  #selectedDate {
+    text-align: middle;
+    width: 180px; /* Set the width in pixels or another unit */
+    height: 100px;
+    line-height: 100px; /* Set line height to the same as the height for vertical centering */
+  }
+
+  /* Add this CSS to style the textarea and date input */
+.styled-input,
+.styled-textarea {
+  margin: auto; /* Center in the enclosing div */
+  display: block;
+  border: 2px solid #ced4da; /* Example border color */
+  padding: .375rem .75rem; /* Example padding */
+}
+
+/* You might want to ensure that the form controls are not wider than their parent */
+.form-control {
+  max-width: 100%;
+}
+#taskheader {
+  text-align: middle;
+    width: 180px; /* Set the width in pixels or another unit */
+    height: 100px;
+    line-height: 100px;
+}
+
+ /* Upper body with a different background color */
+ .upper-body {
+  background-color: #e0e0e0; /* Replace with your desired color */
+  padding: 20px;
+  text-align: center; /* Adjust as needed */
+}
+
+/* Lower body with default background color */
+.lower-body {
+  padding: 20px;
+  background-color: #e0e0e0;
+  /* Add any other styles for the lower body as needed */
+}
+
+#hu{
+  color: white;
+  border: 2px solid;
+  font-family: Georgia, serif;
+}

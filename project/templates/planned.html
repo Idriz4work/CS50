@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    planned
+{% endblock %}
+
+{% block main %}
+    <form action="/planner" method="post">
+        <!-- Ensure your form inputs have names that match the keys used in request.form.get() -->
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Well done!</h4>
+            <p>Congratulations you submited youre task and now try to finish it ! I wish you much success</p>
+            <hr>
+            <p class="mb-0">Whenever you need to, finish your task or to delete it click on the navbar's called "finish"/"delete".</p>
+          </div>
+    </form>
+    <form>
+        <div class="card mx-auto" style="width: 18rem; border: 2px solid #ced4da; padding: .375rem .75rem; text-align: center;">
+            <img class="card-img-top" href="https://th.bing.com/th/id/OIP.pfRwGVc1Cnwu4Rx6BmOOUAHaHa?w=209&h=209&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Hustlers Place">
+            <div class="card-body">
+                <h5 class="card-title">Hustlers Place</h5>
+                {% if task_header %}
+                <p>Your Task is named {{ task_header }} and is saved for the {{ selected_date }}.</p>
+                {% elif error %}
+                <p>{{ error }}</p>
+                {% endif %}
+              <a href="/" class="btn btn-primary">Go to Start</a>
+            </div>
+          </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Planner
+{% endblock %}
+
+{% block main %}
+<div class="container mt-4">
+  <form action="/planner" method="post">
+    <div class="card">
+      <div class="card-header">
+        Write the Details of your task
+      </div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="taskHeader" class="form-label">Task Header</label>
+          <input type="text" class="form-control" id="taskHeader" name="taskHeader" placeholder="Task Header" autocomplete="off" autofocus>
+        </div>
+        <div class="mb-3">
+          <label for="selectedDate" class="form-label">Select Date</label>
+          <input type="date" class="form-control styled-input" id="selectedDate" name="selectedDate">
+        </div>
+        <div class="mb-3">
+          <label for="taskDescription" class="form-label">Task Description:</label>
+          <textarea class="form-control styled-textarea" id="taskDescription" name="taskDescription" rows="1" cols="100"></textarea>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-primary">Submit Task</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    planned
+{% endblock %}
+
+{% block main %}
+    <form action="/planner" method="post">
+        <!-- Ensure your form inputs have names that match the keys used in request.form.get() -->
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Tasks Deleted!</h4>
+            <p>Your Tasks are all deleted ! Don't forget to add some new tasks.</p>
+            <hr>
+          </div>
+    </form>
+    <form>
+        <div class="card mx-auto" style="width: 18rem; border: 2px solid #ced4da; padding: .375rem .75rem; text-align: center;">
+            <img class="card-img-top" src="/final/templates/images/cashflo(1).png" alt="Hustlers Place">
+            <div class="card-body">
+                <h5 class="card-title">Hustlers Place</h5>
+              <a href="/" class="btn btn-primary">Go to Start</a>
+            </div>
+          </div>
+    </form>
+{% endblock %}

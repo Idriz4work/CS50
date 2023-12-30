@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tasks
+{% endblock %}
+
+{% block main %}
+    <form action="/" method="post">
+        <!-- Other content -->
+        <main class="container py-5 text-center">
+            <!-- Display tasks -->
+            <table class="table table-striped mt-4">
+                <thead class="thead-dark">
+                    <tr><th colspan="4">Tasks</th></tr>
+                    <tr>
+                        <th>Date</th>
+                        <th>Timestap</th>
+                        <th>Task</th>
+                        <th>Finished</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for task in result %}
+                            <tr>
+                                <td>{% if task["finish"] %}<del>{{ task["date"] }}</del>{% else %}{{ task["date"] }}{% endif %}</td>
+                                <td>{% if task["finish"] %}<del>{{ task["timestap"] }}</del>{% else %}{{ task["timestap"] }}{% endif %}</td>
+                                <td>
+                                    {% if task["finish"] %}
+                                        <del>{{ task["task"] }}</del>
+                                    {% else %}
+                                        {{ task["task"] }}
+                                    {% endif %}
+                                </td>
+                                <td>{% if task["finish"] %}<del>{{ "Yes" }}</del>{% else %}{{ "No" }}{% endif %}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    </table>
+            <table class="table table-striped mt-4">
+                <thead class="thead-dark">
+                    <tr><th colspan="4">Finished Tasks</th></tr>
+                    <tr>
+                        <th>Date</th>
+                        <th>Timestap</th>
+                        <th>Task</th>
+                        <th>Finished</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for task in g %}
+                        <tr>
+                            <td>{% if task["finish"] %}{{ task["date"] }}{% else %}{{ task["date"] }}{% endif %}</td>
+                            <td>{% if task["finish"] %}{{ task["timestap"] }}{% else %}{{ task["timestap"] }}{% endif %}</td>
+                            <td>
+                                {% if task["finish"] %}
+                                    {{ task["task"] }}
+                                {% else %}
+                                    {{ task["task"] }}
+                                {% endif %}
+                            </td>
+                            <td>{% if task["finish"] %}{{ "Yes" }}{% else %}{{ "No" }}{% endif %}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <table class="table table-striped mt-4">
+                <thead class="thead-dark">
+                    <tr><th colspan="4">History of Tasks</th></tr>
+                    <tr>
+                        <th>Date</th>
+                        <th>Timestap</th>
+                        <th>Task</th>
+                        <th>Finished</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for task in finish %}
+                        <tr>
+                            <td>{{ task["date"] }}</td>
+                            <td>{{ task["timestap"] }}</td>
+                            <td>{{task["task"]}}</td>
+                            <td>{{ "Yes" }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+{% endblock %}

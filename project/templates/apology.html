@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    finish
+{% endblock %}
+{% block main %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+</head>
+
+<body>
+    <h3>
+        The thing you tried to do isn't
+        <small class="text-muted">try again</small>
+      </h3>
+      <form>
+        <div class="card mx-auto" style="width: 18rem; border: 2px solid #ced4da; padding: .375rem .75rem; text-align: center;">
+            <img class="card-img-top" src="{{ url_for('static', filename='images/cashflo(1).png') }}" alt="Hustlers Place">
+            <div class="card-body">
+                <h5 class="card-title">Hustlers Place</h5>
+              <a href="/" class="btn btn-primary">Go back</a>
+            </div>
+          </div>
+    </form>
+</body>
+</html>
+{% endblock %}
