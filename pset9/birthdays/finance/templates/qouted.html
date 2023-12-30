@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+{% block main %}
+    <!-- Your form and table here -->
+    <form action="/register" method="post"></form>
+    {% if task_header %}
+        <p>A share of {{ symbol }} ({{ symbol }}) costs {{ stock.price }}$.</p>
+    {% else %}
+        <p>{{ error }}</p>
+    {% endif %}
+{% endblock %}

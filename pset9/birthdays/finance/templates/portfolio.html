@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology
+{% endblock %}
+{% block main %}
+<form action="/" method="post">
+    {% if buy_committed %}
+    <header>
+        <div class="alert alert-primary mb-0 text-center" role="alert">
+            Your bought your stock !
+        </div>
+    </header>
+    {% endif %}
+    {% if sell_committed %}
+    <header>
+        <div class="alert alert-primary mb-0 text-center" role="alert">
+            You sold your stock
+        </div>
+    </header>
+    {% endif %}
+    {% if register_committed %}
+    <header>
+        <div class="alert alert-primary mb-0 text-center" role="alert">
+            successfully registered
+        </div>
+    </header>
+    {% endif %}
+    <main class="container py-5 text-center">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-start">Name</th>
+                    <th class="text-end">Shares</th>
+                    <th class="text-end">Price</th>
+                    <th class="text-end">TOTAL</th>
+                </tr>
+            </thead>
+           <tbody>
+            <tbody>
+                {% for data in info %}
+                    <tr>
+                        <td class="text-start">{{ data.symbol }}</td>
+                        <td class="text-start">{{ data.name }}</td>
+                        <td class="text-end">{{ data.shares }}</td>
+                        <td class="text-end">{{ data.price }}</td>
+                        <td class="text-end">{{ data.total }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </tbody>
+            {% for bank in balance %}
+            <tfoot>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                    <td class="border-0 text-end">{{bank.cash}}</td>
+                </tr>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                    <td class="border-0 w-bold text-end">{{ bank.total }}</td>
+                </tr>
+            </tfoot>
+            {% endfor %}
+        </table>
+    </main>
+</form>
+{% endblock %}
