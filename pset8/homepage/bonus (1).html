@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <link href="myown.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+        <title>My Webpage</title>
+    </head>
+    <header> <!-- Example single danger button -->
+      <div class="btn-group">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8080/me.html">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:8080/Books.html">Books</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:8080/index.html">Homepage</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:8080/bonus%20(1).html">Contact</a>
+          </li>
+        </ul>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-divider" href="#">Separated link</a></li>
+        </ul>
+      </div>
+    </header>
+    <body>
+        <h1><strong>Quiz</strong></h1>
+    </body>
+
+      <p>Here you will asked questions where you can click on the right answer. Have fun !</p>
+
+      <div class="container">
+        <div class="section">
+
+              <hr>
+              <!-- TODO: Add multiple choice question here -->
+              <h3>How many people live in berlin ?</h3>
+
+              <div style="text-align:center"><button class="Incorrect">4,21 Million</button>
+                  <button class="Correct">3,76 Million</button> <!--The right one is this-->
+                  <button class="Incorrect">2,94 Million</button>
+
+                  <k id="response1"></k>
+          </div>
+
+            <div class="section">
+
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Where does ice cream came from ?</h3>
+                <div style="text-align:center"><input type="text"></input>
+                  <button id="check">Check answer</button>
+
+                  <p id="response2"></p>
+
+    <div style="text-align:
+
+                    <k id="response3"></k>
+            </div>
+      <head>
+          <script>
+                // TODO: Add code to check answers to questions
+              document.addEventListener('DOMContentLoaded', function() {
+              let right = document.querySelector('.Correct');
+              right.addEventListener('click', function() {
+                right.style.backgroundColor = 'green';
+                document.querySelector('#response1').innerHTML = 'Correct';
+              });
+
+              let falses = document.querySelectorAll('.Incorrect');
+              for (let i = 0; i < falses.length; i++) {
+                let currentFalse = falses[i];
+                currentFalse.addEventListener('click', function () {
+                    currentFalse.style.backgroundColor = 'red';
+                    document.querySelector('#response1','#response2','#response3').innerHTML = 'Incorrect';
+                  });
+                  }
+
+            document.querySelector('#check').addEventListener('click', function() {
+            let input = document.querySelector('input');
+            if (input.value === 'Iran' || input.value === 'Persia') {
+                input.style.backgroundColor = 'green';
+                document.querySelector('#response2').innerHTML = 'right';
+            }
+            else {
+                input.style.backgroundColor = 'red';
+                document.querySelector('#response2').innerHTML = 'Incorrect';
+            }
+          });
+            });
+        </script>
+    </head>
+</html>

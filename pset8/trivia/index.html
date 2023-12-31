@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+    document.addEventListener('DOMContentLoaded', function() {
+        let right = document.querySelector('.Correct');
+        right.addEventListener('click', function() {
+            right.style.backgroundColor = 'green';
+            document.querySelector('#response1').innerHTML = 'Correct';
+        });
+
+        let falses = document.querySelectorAll('.Incorrect');
+        for (let i = 0; i < falses.length; i++) {
+            let currentFalse = falses[i];
+            currentFalse.addEventListener('click', function () {
+                currentFalse.style.backgroundColor = 'red';
+                document.querySelector('#response1').innerHTML = 'Incorrect';
+            });
+        }
+
+        document.querySelector('#check').addEventListener('click', function() {
+        let input = document.querySelector('input');
+            if (input.value === 'Turkey' || input.value === 'Turkiye' || input.value === 'turkiye' || input.value === 'turkey' || input.value === 'Byzantine' || input.value === 'byzantine') {
+                input.style.backgroundColor = 'green';
+                document.querySelector('#response2').innerHTML = 'right';
+            }
+            else {
+                input.style.backgroundColor = 'red';
+                document.querySelector('#response2').innerHTML = 'Incorrect';
+            }
+        });
+    });
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choices </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>When did Khabib Nurmagomedov retire from UFC ? </h3>
+
+                    <button class="Incorrect">20.12.2018</button>
+                    <button class="Correct">18.03.2021</button> <!--The right one is this-->
+                    <button class="Incorrect">30.12.2020</button>
+                    <button class="Incorrect">29.3.2021</button>
+                    <button class="Incorrect">3.9.2022</button>
+                    <button class="Incorrect">14.3.2021</button>
+
+                    <p id="response1"></p>
+            </div>
+
+            <div class="section">
+
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <h3>From which country did Santa Claus orignate ?</h3>
+                <!-- TODO: Add free response question here -->
+                <input type="text"></input>
+                <button id="check">Check answer</button>
+
+                <p id="response2"></p>
+
+            </div>
+
+        </div>
+    </body>
+</html>
