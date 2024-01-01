@@ -10,7 +10,7 @@ Programming Languages and Tools Used:
 
 HTML, CSS, and JavaScript
 Python
-sqlite3
+SQL
 Other small libraries and packages
 Webpage Functionality:
 
