@@ -1,2 +1,1 @@
-These are all my CS50 projects that I worked on or already finished.
-If you also take the course don't steal my code.
+[README (1).md](https://github.com/Idriz4work/CS50/files/13928655/README.1.md)
