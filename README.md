@@ -1,4 +1,4 @@
-# CS50-Harvard University
+# CS50 - Harvard University
 
 In CS50 from the Harvard University, I acquired a strong foundation in programming and gained the skills to develop my own software. This was showcased in my final project titled "Hustlers Place".
 
